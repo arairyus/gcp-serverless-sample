@@ -3,6 +3,7 @@
 #  name: cloud builder名
 #  entrypoint: 実行するプロセスを指定
 #  args: 引数
+
 steps:
   - id: "branch name"
     name: "alpine"
