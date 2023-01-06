@@ -5,4 +5,4 @@ service_list = [
   "iamcredentials.googleapis.com",
 ]
 
-repo_name = "helloworld-go"
+repo_name = "helloworld"
