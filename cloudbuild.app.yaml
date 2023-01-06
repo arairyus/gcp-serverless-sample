@@ -16,9 +16,13 @@ steps:
   - id: "build image"
     name: "gcr.io/cloud-builders/docker"
     args:
-      - "build"
-      - "-t"
-      - "asia-northeast1-docker.pkg.dev/$PROJECT_ID/helloworld/hello-go:$SHORT_SHA"
-      - "./app/helloworld"
-    images:
-      - "asia-northeast1-docker.pkg.dev/$PROJECT_ID/helloworld/hello-go:$SHORT_SHA"
+      [
+        "build",
+        "-t",
+        "asia-northeast1-docker.pkg.dev/$PROJECT_ID/helloworld/hello-go:$SHORT_SHA",
+        "-f",
+        "./app/helloword/",
+        ".",
+      ]
+    #images:
+    #  - "asia-northeast1-docker.pkg.dev/$PROJECT_ID/helloworld/hello-go:$SHORT_SHA"
