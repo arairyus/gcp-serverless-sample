@@ -1,0 +1,24 @@
+# steps:
+#  id: "ステップ名"
+#  name: cloud builder名
+#  entrypoint: 実行するプロセスを指定
+#  args: 引数
+steps:
+  - id: "branch name"
+    name: "alpine"
+    entrypoint: "sh"
+    args:
+      - "-c"
+      - |
+        echo "***********************"
+        echo "$BRANCH_NAME"
+        echo "***********************"
+  - id: "build image"
+    name: "gcr.io/cloud-builders/docker"
+    args:
+      - "build"
+      - "-t"
+      - "asia-northeast1-docker.pkg.dev/$PROJECT_ID/helloworld/hello-go:$SHORT_SHA"
+      - "./app/helloworld"
+    images:
+      - "asia-northeast1-docker.pkg.dev/$PROJECT_ID/helloworld/hello-go:$SHORT_SHA"

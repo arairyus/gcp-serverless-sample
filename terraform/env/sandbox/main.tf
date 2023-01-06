@@ -18,10 +18,10 @@ module "service_api" {
   gcp_service_list = var.service_list
 }
 
-module "gha" {
-  source     = "../../modules/gha"
-  project_id = var.project_id
-}
+#module "gha" {
+#  source     = "../../modules/gha"
+#  project_id = var.project_id
+#}
 
 module "hellowold_repo" {
   source    = "../../modules/artifact_registory"
