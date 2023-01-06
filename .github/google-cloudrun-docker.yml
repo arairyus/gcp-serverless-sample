@@ -46,7 +46,9 @@ name: Build and Deploy to Cloud Run
 
 on:
   push:
-    branches: ["main", "feature/*"]
+    branches:
+      - main
+      - feature/*
 
 env:
   PROJECT_ID: "${{ secrets.YOUR_PROJECT_ID }}"
