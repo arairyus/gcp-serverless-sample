@@ -35,5 +35,5 @@ resource "google_cloudbuild_trigger" "app-trigger" {
 
   filename = "cloudbuild.app.yaml"
 
-  service_account = google_service_account.cloudbuild.id
+  #service_account = google_service_account.cloudbuild.id
 }
